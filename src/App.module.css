@@ -18,45 +18,6 @@
   font-weight: 700;
 }
 
-.labelRight {
-  right: var(--edge);
-}
-
-.onRed {
-  color: var(--white);
-}
-
-.blob {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  container-type: size;
-  pointer-events: none;
-  animation: drift 14s ease-in-out infinite alternate;
-}
-
-.blobShape {
-  position: relative;
-  flex: none;
-}
-
-.blobShape img {
-  position: absolute;
-  /* padding Figma adds around the shape for its 80px red glow */
-  inset: -3.4% -1.73%;
-  display: block;
-  width: calc(100% + 3.46%);
-  height: calc(100% + 6.8%);
-  max-width: none;
-}
-
-@keyframes drift {
-  to {
-    translate: 0 -1.5%;
-  }
-}
-
 /* ---------- hero ---------- */
 .hero {
   position: relative;
@@ -101,70 +62,6 @@
     opacity: 0;
     transform: translateY(16px);
   }
-}
-
-/* ---------- about (desktop: the 16:9 slide composition) ---------- */
-.about {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  min-height: 640px;
-  overflow: hidden;
-  background: var(--white);
-}
-
-.aboutBlobA {
-  inset: 55.28% -129.67% -181.34% -12.86%;
-}
-
-.aboutBlobA .blobShape {
-  width: hypot(-99.0198cqw, -3.66506cqh);
-  height: hypot(-0.980158cqw, 96.3349cqh);
-  rotate: 1.11deg;
-  scale: -1 1;
-}
-
-.aboutBlobB {
-  inset: -123.06% -31.57% -65.56% -126.25%;
-  animation-direction: alternate-reverse;
-}
-
-.aboutBlobB .blobShape {
-  width: hypot(91.7543cqw, 25.6727cqh);
-  height: hypot(8.24569cqw, -74.3273cqh);
-  rotate: -170.01deg;
-  scale: -1 1;
-}
-
-/* the brand shape in white, rising out of the next section so the
-   slide composition melts into the page instead of ending on a hard cut */
-.aboutFade {
-  position: absolute;
-  z-index: 0;
-  /* wide enough that the shape's rounded bottom corners sit off-screen */
-  left: -18%;
-  right: -18%;
-  /* the svg carries ~3% of transparent glow padding under its flat edge */
-  bottom: -14px;
-  height: 26%;
-  background: var(--white);
-  -webkit-mask: url('/brand/blob-red.svg') 0 100% / 100% 100% no-repeat;
-  mask: url('/brand/blob-red.svg') 0 100% / 100% 100% no-repeat;
-  pointer-events: none;
-}
-
-.aboutCopy {
-  position: absolute;
-  z-index: 1;
-  left: 50%;
-  top: 41.85%;
-  width: min(34%, 640px);
-  font-size: clamp(15px, 1.2vw, 22px);
-  line-height: 1.5;
-  color: var(--black);
-}
-
-.aboutCopy p + p {
-  margin-top: 1.2em;
 }
 
 /* ---------- games ---------- */
@@ -292,32 +189,6 @@
 
 /* ---------- small screens ---------- */
 @media (max-width: 860px) {
-  .about {
-    aspect-ratio: auto;
-    min-height: 0;
-    padding: 120px 24px 120px;
-    background: var(--red);
-  }
-
-  .aboutBlobA,
-  .aboutBlobB {
-    display: none;
-  }
-
-  .aboutFade {
-    bottom: -6px;
-    height: 64px;
-  }
-
-  .aboutCopy {
-    position: static;
-    width: auto;
-    padding: 32px 28px;
-    border-radius: 40px;
-    background: var(--white);
-    box-shadow: 0 0 80px rgba(249, 249, 249, 0.35);
-  }
-
   .cards {
     grid-template-columns: 1fr;
   }
@@ -328,7 +199,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .blob,
   .lockup {
     animation: none;
   }

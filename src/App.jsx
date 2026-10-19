@@ -17,17 +17,6 @@ const games = [
   },
 ]
 
-// The red organic shape from the brand guide, with its glow baked in.
-function Blob({ className }) {
-  return (
-    <div className={`${styles.blob} ${className}`} aria-hidden="true">
-      <div className={styles.blobShape}>
-        <img src="/brand/blob-red.svg" alt="" />
-      </div>
-    </div>
-  )
-}
-
 export default function App() {
   const year = new Date().getFullYear()
 
@@ -39,7 +28,6 @@ export default function App() {
           <strong>R.ATPC</strong>
         </p>
         <nav className={`${styles.label} ${styles.nav}`} aria-label="Sections">
-          <a href="#about">About</a>
           <a href="#games">Games</a>
         </nav>
 
@@ -48,29 +36,8 @@ export default function App() {
         </h1>
       </header>
 
-      {/* About — "2" brand identity slide */}
-      <section id="about" className={styles.about} aria-label="About">
-        <Blob className={styles.aboutBlobA} />
-        <Blob className={styles.aboutBlobB} />
-        <div className={styles.aboutFade} aria-hidden="true" />
-
-        <p className={`${styles.label} ${styles.labelRight} ${styles.onRed}`}>About</p>
-        <div className={styles.aboutCopy}>
-          <p>
-            An interdimensional entertainment brand committed to expanding human experience and
-            understanding through innovative content and technologies.
-          </p>
-          <p>
-            Test Jar Labs exists to push the boundaries of what&rsquo;s possible, bridging dimensions
-            to bring novel experiences and knowledge to its audience. It&rsquo;s a trailblazer, a
-            gateway to new worlds, and a symbol of limitless possibilities.
-          </p>
-        </div>
-      </section>
-
       {/* Games — "4" colors slide */}
       <section id="games" className={styles.games}>
-        <p className={`${styles.label} ${styles.labelRight}`}>Games</p>
 
         <h2 className={styles.gamesTitle}>Our games</h2>
         <ul className={styles.cards}>
