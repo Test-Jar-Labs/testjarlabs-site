@@ -49,13 +49,12 @@ export default function App() {
       </header>
 
       {/* About — "2" brand identity slide */}
-      <section id="about" className={styles.about}>
+      <section id="about" className={styles.about} aria-label="About">
         <Blob className={styles.aboutBlobA} />
         <Blob className={styles.aboutBlobB} />
         <div className={styles.aboutFade} aria-hidden="true" />
 
         <p className={`${styles.label} ${styles.labelRight} ${styles.onRed}`}>About</p>
-        <h2 className={styles.aboutTitle}>Who we are</h2>
         <div className={styles.aboutCopy}>
           <p>
             An interdimensional entertainment brand committed to expanding human experience and

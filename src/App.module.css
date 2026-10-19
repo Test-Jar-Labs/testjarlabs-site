@@ -152,20 +152,6 @@
   pointer-events: none;
 }
 
-.aboutTitle {
-  position: absolute;
-  z-index: 1;
-  left: 21%;
-  top: 49.7%;
-  transform: translate(-50%, -50%);
-  font-family: var(--display);
-  font-weight: 400;
-  font-size: clamp(28px, 2.6vw, 52px);
-  text-transform: uppercase;
-  white-space: nowrap;
-  color: var(--white);
-}
-
 .aboutCopy {
   position: absolute;
   z-index: 1;
@@ -323,32 +309,9 @@
     height: 64px;
   }
 
-  /* the brand shape in white, rising out of the next section so the
-   slide composition melts into the page instead of ending on a hard cut */
-.aboutFade {
-  position: absolute;
-  z-index: 0;
-  /* wide enough that the shape's rounded bottom corners sit off-screen */
-  left: -18%;
-  right: -18%;
-  /* the svg carries ~3% of transparent glow padding under its flat edge */
-  bottom: -14px;
-  height: 26%;
-  background: var(--white);
-  -webkit-mask: url('/brand/blob-red.svg') 0 100% / 100% 100% no-repeat;
-  mask: url('/brand/blob-red.svg') 0 100% / 100% 100% no-repeat;
-  pointer-events: none;
-}
-
-.aboutTitle {
-    position: static;
-    transform: none;
-  }
-
   .aboutCopy {
     position: static;
     width: auto;
-    margin-top: 28px;
     padding: 32px 28px;
     border-radius: 40px;
     background: var(--white);
