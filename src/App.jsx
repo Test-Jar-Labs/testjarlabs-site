@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react'
 import styles from './App.module.css'
 
 const games = [
@@ -70,6 +71,7 @@ export default function App() {
         <span className={styles.footerMark} aria-hidden="true" />
         <span>© {year} Test Jar Labs</span>
       </footer>
+      <Analytics />
     </>
   )
 }
