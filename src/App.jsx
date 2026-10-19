@@ -1,63 +1,105 @@
-import Logo from './Logo.jsx'
 import styles from './App.module.css'
 
 const games = [
   {
     name: 'Doomscrollers',
-    blurb: 'a privacy invading battle of digital profiling',
+    blurb: 'A privacy invading battle of digital profiling.',
+    cta: 'Play',
     href: 'https://doomscrollers.testjarlabs.com',
+    tone: 'red',
   },
   {
     name: 'Dance Break',
-    blurb: 'interactive dance challenges — the next-gen photobooth',
+    blurb: 'Interactive dance challenges. The next-gen photobooth.',
+    cta: 'Book',
     href: 'https://www.playdancebreak.com',
+    tone: 'black',
   },
 ]
+
+// The red organic shape from the brand guide, with its glow baked in.
+function Blob({ className }) {
+  return (
+    <div className={`${styles.blob} ${className}`} aria-hidden="true">
+      <div className={styles.blobShape}>
+        <img src="/brand/blob-red.svg" alt="" />
+      </div>
+    </div>
+  )
+}
 
 export default function App() {
   const year = new Date().getFullYear()
 
   return (
     <>
-      <section className={styles.hero}>
-        <span className={styles.cornerBar} aria-hidden="true" />
+      {/* Hero — "11" title slide */}
+      <header className={styles.hero}>
+        <p className={`${styles.label} ${styles.labelLeft}`}>
+          <strong>R.ATPC</strong>
+        </p>
+        <nav className={`${styles.label} ${styles.nav}`} aria-label="Sections">
+          <a href="#about">About</a>
+          <a href="#games">Games</a>
+        </nav>
 
-        <div className={styles.lockup}>
-          <Logo className={styles.logo} animated />
-          <div className={styles.copy}>
-            <h1 className={styles.title}>Test Jar Labs</h1>
-            <p className={styles.body}>
-              An experimental games studio. We make interactive, AR and real-world games,
-              and build playful experiences with brands we love.
-            </p>
-          </div>
-        </div>
+        <h1 className={styles.lockup}>
+          <img src="/brand/lockup-red.svg" alt="Test Jar Labs" width="383" height="248" />
+        </h1>
+      </header>
 
-        <a className={styles.cta} href="#games">
-          Our games <span className={styles.arrow} aria-hidden="true" />
-        </a>
+      {/* About — "2" brand identity slide */}
+      <section id="about" className={styles.about}>
+        <Blob className={styles.aboutBlobA} />
+        <Blob className={styles.aboutBlobB} />
+        <div className={styles.aboutFade} aria-hidden="true" />
 
-        <div className={styles.bottomBar} aria-hidden="true">
-          <span />
-          <span />
+        <p className={`${styles.label} ${styles.labelRight} ${styles.onRed}`}>About</p>
+        <h2 className={styles.aboutTitle}>Who we are</h2>
+        <div className={styles.aboutCopy}>
+          <p>
+            An interdimensional entertainment brand committed to expanding human experience and
+            understanding through innovative content and technologies.
+          </p>
+          <p>
+            Test Jar Labs exists to push the boundaries of what&rsquo;s possible, bridging dimensions
+            to bring novel experiences and knowledge to its audience. It&rsquo;s a trailblazer, a
+            gateway to new worlds, and a symbol of limitless possibilities.
+          </p>
         </div>
       </section>
 
+      {/* Games — "4" colors slide */}
       <section id="games" className={styles.games}>
+        <p className={`${styles.label} ${styles.labelRight}`}>Games</p>
+
         <h2 className={styles.gamesTitle}>Our games</h2>
-        <ul className={styles.gameList}>
+        <ul className={styles.cards}>
           {games.map((g) => (
             <li key={g.name}>
-              <a href={g.href} target="_blank" rel="noreferrer" className={styles.game}>
-                <span className={styles.gameName}>{g.name}</span>
-                <span className={styles.gameBlurb}>{g.blurb}</span>
-                <span className={styles.gameArrow} aria-hidden="true">↗</span>
+              <a
+                className={`${styles.card} ${styles[g.tone]}`}
+                href={g.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className={styles.cardName}>{g.name}</span>
+                <span className={styles.cardBody}>
+                  <span className={styles.cardBlurb}>{g.blurb}</span>
+                  <span className={styles.cardCta}>
+                    {g.cta} <span aria-hidden="true">↗</span>
+                  </span>
+                </span>
               </a>
             </li>
           ))}
         </ul>
-        <footer className={styles.footer}>© {year} Test Jar Labs</footer>
       </section>
+
+      <footer className={styles.footer}>
+        <span className={styles.footerMark} aria-hidden="true" />
+        <span>© {year} Test Jar Labs</span>
+      </footer>
     </>
   )
 }

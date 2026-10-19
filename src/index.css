@@ -1,7 +1,6 @@
-/* Brand fonts: Kallisto Heavy (display) + Nunito (body).
-   Kallisto isn't a web font we can load from Google, so it's used when installed
-   locally, otherwise Russo One stands in. To ship Kallisto to everyone, drop a
-   licensed webfont into public/fonts/ and add a url() below. */
+/* Test Jar Labs — R.ATPC (red) brand tokens, from the TJL Branding Figma file.
+   Display font is Kallisto Heavy: used when installed locally, otherwise Russo One
+   stands in. The logo lockups in public/brand/ already have Kallisto outlined. */
 @font-face {
   font-family: 'Kallisto';
   src: local('Kallisto Heavy'), local('Kallisto-Heavy');
@@ -10,12 +9,16 @@
 }
 
 :root {
-  --ink: #1a1a21;
-  --paper: #f2f2f9;
-  --red: #f9464b;
-  --blue: #00a4ff;
+  --red: #f9464b; /* primary */
+  --white: #f9f9f9; /* primary */
+  --yellow: #ffc700; /* secondary */
+  --black: #1a1a21; /* secondary */
+  --red-glow: 0 0 80px rgba(249, 70, 75, 0.35);
+  --alt-glow: 0 0 15px rgba(26, 26, 33, 0.23);
   --display: 'Kallisto', 'Russo One', system-ui, sans-serif;
   --body: 'Nunito', system-ui, sans-serif;
+  --edge: clamp(24px, 5.2vw, 100px); /* 100px margin on the 1920 slides */
+  --label: clamp(14px, 1.05vw, 20px);
 }
 
 * {
@@ -26,12 +29,12 @@
 
 html {
   scroll-behavior: smooth;
-  background: var(--ink);
+  background: var(--white);
 }
 
 body {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--white);
+  color: var(--black);
   font-family: var(--body);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -39,7 +42,7 @@ body {
 
 ::selection {
   background: var(--red);
-  color: var(--ink);
+  color: var(--white);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -15,7 +15,7 @@ Every push to `main` deploys automatically on Vercel (framework preset: Vite, ou
 
 ## Editing
 
-- Copy and project links live in `src/App.jsx` (the `projects` array).
+- All copy lives in `src/App.jsx`; the games list is the `games` array there.
 - Colors and fonts are CSS variables in `src/index.css`.
-- Games list lives in the `games` array in `src/App.jsx`.
-- Brand: `#1A1A21` ink, `#F2F2F9` paper, `#F9464B` red, `#00A4FF` blue. Display font is Kallisto Heavy (used if installed locally, Russo One otherwise); body is Nunito.
+- Brand: the red (R.ATPC) palette from the TJL Branding Figma file — red `#F9464B` and white `#F9F9F9` (primary), yellow `#FFC700` and black `#1A1A21` (secondary). Headings use Kallisto Heavy if installed locally, Russo One otherwise; body is Nunito.
+- Logos and the organic red shape are exported from Figma into `public/brand/` (the wordmark is outlined Kallisto, so it renders correctly everywhere).
