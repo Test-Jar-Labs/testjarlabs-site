@@ -3,14 +3,14 @@ import styles from './App.module.css'
 const games = [
   {
     name: 'Doomscrollers',
-    blurb: 'A privacy invading battle of digital profiling.',
+    blurb: ['A privacy invading battle', 'of digital profiling.'],
     cta: 'Play',
     href: 'https://doomscrollers.testjarlabs.com',
     tone: 'red',
   },
   {
     name: 'Dance Break',
-    blurb: 'Interactive dance challenges. The next-gen photobooth.',
+    blurb: ['Interactive dance challenges.', 'The next-gen photobooth.'],
     cta: 'Book',
     href: 'https://www.playdancebreak.com',
     tone: 'black',
@@ -51,7 +51,11 @@ export default function App() {
               >
                 <span className={styles.cardName}>{g.name}</span>
                 <span className={styles.cardBody}>
-                  <span className={styles.cardBlurb}>{g.blurb}</span>
+                  <span className={styles.cardBlurb}>
+                    {g.blurb.map((line) => (
+                      <span key={line}>{line}</span>
+                    ))}
+                  </span>
                   <span className={styles.cardCta}>
                     {g.cta} <span aria-hidden="true">↗</span>
                   </span>

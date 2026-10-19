@@ -148,7 +148,6 @@
   flex-direction: column;
   align-items: flex-end;
   gap: 16px;
-  max-width: 16em;
   text-align: right;
 }
 
@@ -156,6 +155,12 @@
   font-size: clamp(15px, 1.1vw, 18px);
   line-height: 1.45;
   opacity: 0.9;
+}
+
+/* each blurb is two set lines */
+.cardBlurb > span {
+  display: block;
+  white-space: nowrap;
 }
 
 .cardCta {
@@ -190,11 +195,18 @@
 /* ---------- small screens ---------- */
 @media (max-width: 860px) {
   .cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .card {
     height: 440px;
+  }
+}
+
+/* very narrow phones: let the blurb lines wrap rather than spill out of the card */
+@media (max-width: 359px) {
+  .cardBlurb > span {
+    white-space: normal;
   }
 }
 
