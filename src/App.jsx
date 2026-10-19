@@ -13,7 +13,7 @@ const games = [
     blurb: ['Interactive dance challenges.', 'The next-gen photobooth.'],
     cta: 'Book',
     href: 'https://www.playdancebreak.com',
-    tone: 'black',
+    tone: 'danceBreak',
   },
 ]
 

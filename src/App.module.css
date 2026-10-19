@@ -119,10 +119,14 @@
   box-shadow: var(--red-glow);
 }
 
-.black {
-  background: var(--black);
-  color: var(--white);
-  box-shadow: var(--alt-glow);
+/* Dance Break's own palette */
+.danceBreak {
+  --db-white: #ffffff;
+  --db-purple: #6e56ff;
+  --db-yellow: #eee167;
+  background: var(--db-purple);
+  color: var(--db-white);
+  box-shadow: 0 0 80px rgba(110, 86, 255, 0.35);
 }
 
 .cardName {
@@ -137,8 +141,8 @@
   white-space: nowrap;
 }
 
-.black .cardName {
-  color: var(--yellow);
+.danceBreak .cardName {
+  color: var(--db-yellow);
 }
 
 .cardBody {
@@ -169,8 +173,8 @@
   text-transform: uppercase;
 }
 
-.black .cardCta {
-  color: var(--yellow);
+.danceBreak .cardCta {
+  color: var(--db-yellow);
 }
 
 /* ---------- footer ---------- */
