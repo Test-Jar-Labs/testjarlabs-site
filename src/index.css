@@ -1,0 +1,49 @@
+/* Brand fonts: Kallisto Heavy (display) + Nunito (body).
+   Kallisto isn't a web font we can load from Google, so it's used when installed
+   locally, otherwise Russo One stands in. To ship Kallisto to everyone, drop a
+   licensed webfont into public/fonts/ and add a url() below. */
+@font-face {
+  font-family: 'Kallisto';
+  src: local('Kallisto Heavy'), local('Kallisto-Heavy');
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --ink: #1a1a21;
+  --paper: #f2f2f9;
+  --red: #f9464b;
+  --blue: #00a4ff;
+  --display: 'Kallisto', 'Russo One', system-ui, sans-serif;
+  --body: 'Nunito', system-ui, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--ink);
+}
+
+body {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--red);
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
